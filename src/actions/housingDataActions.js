@@ -1,7 +1,9 @@
 import { GET_HOUSING_DATA } from "./types";
 
 export const getHousingData = () => dispatch => {
-    fetch(`http://localhost:8000/api/housingData/data`)
+    //http://localhost:8000
+    const url = 'http://usahousingdataserver-env.eba-rmsyn4de.us-east-2.elasticbeanstalk.com';
+    fetch(`${url}/api/housingData/data`)
         .then((res) => res.json())
         .then((data) => {
             dispatch({
