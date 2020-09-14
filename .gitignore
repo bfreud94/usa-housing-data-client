@@ -1,0 +1,11 @@
+# Node modules
+**/node_modules
+
+# Vercel
+**/.vercel
+
+# Build
+**/build
+
+# VSCode Settings
+/.vscode
