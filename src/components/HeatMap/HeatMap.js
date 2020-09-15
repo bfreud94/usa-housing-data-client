@@ -37,7 +37,7 @@ class HeatMap extends Component {
                     intensityExtractor={m => parseFloat(m[2])} />
                 <MarkerCluster markers={dataPoints}/>
                 <TileLayer
-                    url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+                    url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
             </Map>
