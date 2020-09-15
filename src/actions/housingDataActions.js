@@ -1,8 +1,8 @@
 import { GET_HOUSING_DATA } from "./types";
 
 export const getHousingData = () => dispatch => {
-    //http://localhost:8000
-    const url = 'http://usahousingdataserver-env.eba-rmsyn4de.us-east-2.elasticbeanstalk.com';
+    //const url = 'http://localhost:8000';
+    const url = 'https://usa-housing-data-server.vercel.app';
     fetch(`${url}/api/housingData/data`)
         .then((res) => res.json())
         .then((data) => {
