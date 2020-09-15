@@ -18,7 +18,7 @@ const MarkerCluster = ({ markers }) => {
             icon: CustomMarker
         })
         .addTo(mcg)
-        .bindPopup(marker[2])
+        .bindPopup(`$${marker[2].toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`)
     );
     map.addLayer(mcg);
 }, [markers, map]);
@@ -28,6 +28,5 @@ const MarkerCluster = ({ markers }) => {
 MarkerCluster.propTypes = {
     markers: PropTypes.array
 };
-  
 
 export default MarkerCluster;
