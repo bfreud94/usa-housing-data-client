@@ -1,8 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import HeatMap from './components/HeatMap/HeatMap';
-import Header from './components/Header/Header';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Home from './components/Home/Home';
 import store from './store';
 import './App.css';
 
@@ -10,10 +9,7 @@ function App() {
     return (
         <Provider store={store}>
             <Router>
-                <Header />
-                <Route exact path="/" render={props =>  (
-                    <HeatMap />
-                )} />
+                <Home />
             </Router>
         </Provider>
     );

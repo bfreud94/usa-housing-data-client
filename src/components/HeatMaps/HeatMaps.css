@@ -1,0 +1,22 @@
+.map {
+    background-color: white;
+    border: 30px white solid;
+    height: 50%;
+    margin: 0 auto;
+    margin-bottom: 75px;
+    margin-left: 50px;
+    margin-top: 10px;
+    width: 100%;
+}
+.heatmaps-wrapper {
+    height: 1000px;
+    width: 80%;
+}
+.heatmaps-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.heatmaps-title {
+    margin: 40px 0px 0px 50px;
+}
