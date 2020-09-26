@@ -32,7 +32,7 @@ class HeatMap extends Component {
         const { dropdownValue } = this.state;
         if (store.getState().housingData.data[dropdownValue.value].length === 0) {
             this.props.getHousingData(dropdownValue.value);
-        }  
+        }
     }
 
     dropdownChange = (e) => {
