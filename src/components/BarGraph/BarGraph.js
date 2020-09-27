@@ -23,6 +23,19 @@ export class BarGraph extends Component {
         };
     }
 
+    componentDidMount() {
+        const { labels } = this.props;
+        const { options } = this.state;
+        this.setState({
+            options: {
+                ...options,
+                xaxis: {
+                    categories: labels
+                }
+            }
+        });
+    }
+
     componentDidUpdate() {
         const { labels } = this.props;
         const { options } = this.state;
