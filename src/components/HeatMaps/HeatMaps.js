@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { Map, TileLayer } from 'react-leaflet';
 import HeatmapLayer from 'react-leaflet-heatmap-layer';
 import MapDropdown from '../MapDropdown/MapDropdown';
 import MarkerCluster from '../MarkerCluster/MarkerCluster';
 import { getHousingData } from '../../actions/housingDataActions';
-import { dropdownOptions } from '../util/DropdownOptions';
+import { dropdownOptions } from '../../util/DropdownOptions';
 import store from '../../store';
 import './HeatMaps.css';
 
@@ -49,12 +50,13 @@ class HeatMap extends Component {
             <Map className='map' center={position} zoom={zoom}>
                 <HeatmapLayer
                     points={dataPoints}
-                    longitudeExtractor={m => m[1]}
+                    longitudeExtractor={(m) => m[1]}
                     max={dropdownValue.maximum}
                     radius={50}
-                    latitudeExtractor={m => m[0]}
-                    intensityExtractor={m => parseFloat(m[2])} />
-                <MarkerCluster markers={dataPoints}/>
+                    latitudeExtractor={(m) => m[0]}
+                    intensityExtractor={(m) => parseFloat(m[2])}
+                />
+                <MarkerCluster markers={dataPoints} />
                 <TileLayer
                     url='https://{s}.tile.osm.org/{z}/{x}/{y}.png'
                     attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -78,7 +80,11 @@ class HeatMap extends Component {
     }
 }
 
-const mapStateToProps = state => ({
+HeatMap.propTypes = {
+    getHousingData: PropTypes.func.isRequired
+};
+
+const mapStateToProps = (state) => ({
     housingData: state.housingData
 });
 

@@ -25,19 +25,23 @@ class Home extends Component {
         const { currentPage } = this.state;
         return (
             <div className='container'>
-                <ToolBar changePage={this.changePage} currentPage={currentPage}/>
-                <Route exact path='/' render={props =>  (
+                <ToolBar changePage={this.changePage} currentPage={currentPage} />
+                <Route exact path='/' render={(props) => (
                     <Redirect props={props} to='/maps' />
-                )} />
-                <Route exact path='/maps' render={props =>  (
+                )}
+                />
+                <Route exact path='/maps' render={(props) => (
                     <HeatMap props={props} />
-                )} />
-                <Route exact path='/dataAnalysis' render={props =>  (
+                )}
+                />
+                <Route exact path='/dataAnalysis' render={(props) => (
                     <DataAnalysis props={props} />
-                )} />
-                <Route exact path='/directory' render={props =>  (
+                )}
+                />
+                <Route exact path='/directory' render={(props) => (
                     <Directory props={props} />
-                )} />
+                )}
+                />
             </div>
         );
     }

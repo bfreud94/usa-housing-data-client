@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
-import { dropdownOptions } from '../util/DropdownOptions';
+import { dropdownOptions } from '../../util/DropdownOptions';
 import './MapDropdown.css';
 
 class MapDropdown extends Component {
@@ -17,6 +17,6 @@ class MapDropdown extends Component {
 MapDropdown.propTypes = {
     dropdownChange: PropTypes.func.isRequired,
     dropdownValue: PropTypes.object.isRequired
-}
+};
 
 export default MapDropdown;

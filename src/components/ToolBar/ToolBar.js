@@ -31,15 +31,13 @@ class ToolBar extends Component {
         };
     }
 
-    hamburgerMenu = () => {
-        return (
-            <div className='hamburger-menu' id='hamburger-menu' onClick={this.toggleHamburgerMenu}>
-                <div className='hamburger-menu-bar-one'></div>
-                <div className='hamburger-menu-bar-two'></div>
-                <div className='hamburger-menu-bar-three'></div>
-            </div>
-        );
-    }
+    hamburgerMenu = () => (
+        <div className='hamburger-menu' id='hamburger-menu' onClick={this.toggleHamburgerMenu} role='button' tabIndex={0}>
+            <div className='hamburger-menu-bar-one' />
+            <div className='hamburger-menu-bar-two' />
+            <div className='hamburger-menu-bar-three' />
+        </div>
+    );
 
     toggleHamburgerMenu = () => {
         const { hamburgerMenuExpanded } = this.state;
@@ -52,15 +50,15 @@ class ToolBar extends Component {
     toolbarIcon = (page, toolbarText) => {
         const { hamburgerMenuExpanded } = this.state;
         const { changePage } = this.props;
-        const iconMap = {'dataAnalysis': 'fas fa-tachometer-alt', 'maps': 'fas fa-globe-americas', 'directory': 'fas fa-address-book'};
+        const iconMap = { dataAnalysis: 'fas fa-tachometer-alt', maps: 'fas fa-globe-americas', directory: 'fas fa-address-book' };
         return (
             <Link style={this.iconStyles(page)} onClick={() => changePage(page)} to={page}>
-                <i className={iconMap[page]}></i>
+                <i className={iconMap[page]} />
                 <span className='toolbar-text'>{hamburgerMenuExpanded ? toolbarText : ''}</span>
             </Link>
         );
     }
-    
+
     render() {
         return (
             <div className='toolbar' id='toolbar' style={this.toolbarStyles()}>
@@ -76,6 +74,6 @@ class ToolBar extends Component {
 ToolBar.propTypes = {
     changePage: PropTypes.func.isRequired,
     currentPage: PropTypes.string.isRequired
-}
+};
 
 export default ToolBar;

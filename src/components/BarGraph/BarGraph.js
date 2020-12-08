@@ -19,7 +19,7 @@ export class BarGraph extends Component {
                 xaxis: {
                     categories: []
                 }
-            },
+            }
         };
     }
 
@@ -39,7 +39,7 @@ export class BarGraph extends Component {
     componentDidUpdate() {
         const { labels } = this.props;
         const { options } = this.state;
-        if(options.xaxis.categories.length === 0) {
+        if (options.xaxis.categories.length === 0) {
             this.setState({
                 options: {
                     ...options,
@@ -49,12 +49,6 @@ export class BarGraph extends Component {
                 }
             });
         }
-    }
-    
-    dropdownChange = (e) => {
-        this.setState({
-            dropdownValue: e
-        });
     }
 
     render() {
@@ -70,8 +64,7 @@ export class BarGraph extends Component {
 
 BarGraph.propTypes = {
     data: PropTypes.array.isRequired,
-    dropdownValue: PropTypes.object.isRequired,
     labels: PropTypes.array.isRequired
-}
+};
 
 export default BarGraph;
