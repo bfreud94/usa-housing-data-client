@@ -1,6 +1,6 @@
-import { GET_HOUSING_DATA } from "./types";
+import { GET_HOUSING_DATA } from './types';
 
-export const getHousingData = (mapType) => dispatch => {
+export const getHousingData = (mapType) => (dispatch) => {
     const url = process.env.NODE_ENV.trim() === 'development' ? 'http://localhost:8000' : 'https://usa-housing-data-server.herokuapp.com';
     fetch(`${url}/api/housingData/data?mapType=${mapType}`)
         .then((res) => res.json())
@@ -13,4 +13,4 @@ export const getHousingData = (mapType) => dispatch => {
                 }
             });
         });
-}
+};
