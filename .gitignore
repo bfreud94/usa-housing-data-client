@@ -9,3 +9,7 @@
 
 # VSCode Settings
 /.vscode
+
+# ESLint
+.eslintrc.json
+.eslintcache

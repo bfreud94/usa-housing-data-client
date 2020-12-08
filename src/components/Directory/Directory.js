@@ -7,7 +7,7 @@ class Directory extends Component {
             <div className='directory-container'>
                 Directory
             </div>
-        )
+        );
     }
 }
 

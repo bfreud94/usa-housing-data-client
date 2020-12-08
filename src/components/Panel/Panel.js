@@ -16,6 +16,6 @@ class Panel extends Component {
 
 Panel.propTypes = {
     component: PropTypes.object.isRequired
-}
+};
 
 export default Panel;
