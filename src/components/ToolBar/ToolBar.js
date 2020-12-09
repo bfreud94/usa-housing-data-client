@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import DelayedText from '../DelayedText/DelayedText';
 import './ToolBar.css';
 
 class ToolBar extends Component {
@@ -54,7 +55,7 @@ class ToolBar extends Component {
         return (
             <Link style={this.iconStyles(page)} onClick={() => changePage(page)} to={page}>
                 <i className={iconMap[page]} />
-                <span className='toolbar-text'>{hamburgerMenuExpanded ? toolbarText : ''}</span>
+                <span className='toolbar-text'>{hamburgerMenuExpanded ? <DelayedText delay={175}>{toolbarText}</DelayedText> : ''}</span>
             </Link>
         );
     }
